@@ -1,3 +1,43 @@
+## 🛠️ Script `gg.sh` — Installation automatisée de 2Moons PHP 8.1
+
+Le script `gg.sh` est un outil shell conçu pour automatiser l’installation et la configuration du projet **2Moons 2.0 compatible PHP 8.1** dans un environnement local basé sur **XAMPP**.
+
+### 🚀 Fonctionnalités principales
+
+- 📦 **Clonage du dépôt** dans le dossier `/opt/lampp/htdocs/glitch-uv`
+- 🔧 **Configuration des permissions** pour Apache (daemon)
+- 🧪 **Vérification de l’environnement PHP**
+- 📄 **Création automatique du fichier `.env`**
+- 💾 **Préparation de la base de données** (optionnelle)
+- 🔁 **Redémarrage de XAMPP**
+- 🌐 **Ouverture automatique du site** dans le navigateur
+
+### 📍 Chemin d’installation
+
+Le projet est installé dans :
+
+/opt/lampp/htdocs/glitch-uv
+
+### ✅ Compatibilité
+
+- PHP ≥ 8.1.0
+- XAMPP Linux
+- MariaDB / MySQL ≥ 10.4
+
+### 📦 Dépendances
+
+- `git`
+- `php`
+- `mysql` ou `mariadb`
+- `xdg-open` (pour lancer le navigateur)
+
+### 📌 Exemple d’utilisation
+
+```bash
+chmod +x gg.sh
+./gg.sh
+
+
 ## _v2.0.0  Jekill 04.10.2023_
 
 [Updates]
