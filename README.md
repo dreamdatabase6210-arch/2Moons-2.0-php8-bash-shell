@@ -50,4 +50,5 @@ Ce dépôt contient un script shell nommé `gg.sh` conçu pour automatiser l’i
 
 ---
 
-Ce dépôt est destiné aux développeurs passionnés par les jeux spatiaux PHP, souhaitant ad
+Ce dépôt est destiné aux développeurs passionnés par les jeux spatiaux PHP, souhaitant administrer ou moderniser un serveur 2Moons en local ou en production.
+
