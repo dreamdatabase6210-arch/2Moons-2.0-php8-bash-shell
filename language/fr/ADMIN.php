@@ -3,7 +3,12 @@
 // Web : http://www.big-two.tk
 // Version 1.0 - Initial release
 // Version 1.1 - Decode accent HTML to UTF-8 format & small spellchecking
- 
+ // Vérification optionnelle pour éviter les erreurs PHP 8+
+ $LANG = array();
+function getLang($key) {
+    global $LANG;
+    return isset($LANG[$key]) ? $LANG[$key] : "[[$key non défini]]";
+}
 //---------------	GENERAL	------------------------//
 $LNG['adm_login']						= 'Connectez-vous';
 $LNG['adm_username']					= 'Login';
@@ -780,7 +785,7 @@ $LNG['ac_suspended_time']				= 'Bannis';
 $LNG['ac_suspended_longer']				= 'Jusqu\'à';
 $LNG['ac_suspended_reason']				= 'Raison';
 $LNG['ac_suspended_autor']				= 'Bannis pour';
-$LNG['ac_note_k']					.= '<table><tr><th width=10%><font color=lime>T+</font></th><th>Dépasse les Milliards</th></tr>';
+$LANG['ac_note_k'] = 'Note de l’administrateur';
 $LNG['ac_leyend']					= '[ Légende ]';
 $LNG['ac_no_rank_level']				= 'Vous n\'avez pas l\' autorisation suffisante pour voir les informations sur ce joueur !';
 /*
