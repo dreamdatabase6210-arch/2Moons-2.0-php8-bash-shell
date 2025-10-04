@@ -137,30 +137,37 @@ function _date($format, $time = null, $toTimeZone = null, $LNG = NULL)
 		$time 	= floor($time); 
 	}
 
-	if(isset($toTimeZone))
-	{
-		$date = new DateTime();
-		if(method_exists($date, 'setTimestamp'))
-		{	// PHP > 5.3			
-			$date->setTimestamp($time);
-		} else {
-			// PHP < 5.3
-			$tempDate = getdate((int) $time);
-			$date->setDate($tempDate['year'], $tempDate['mon'], $tempDate['mday']);
-			$date->setTime($tempDate['hours'], $tempDate['minutes'], $tempDate['seconds']);
-		}
-		
-		$time	-= $date->getOffset();
-		try {
-			$date->setTimezone(new DateTimeZone($toTimeZone));
-		} catch (Exception $e) {
-			
-		}
-		$time	+= $date->getOffset();
-	}
-	
-	$format	= locale_date_format($format, $time, $LNG);
-	return date($format, $time);
+	if (isset($toTimeZone)) {
+    // Vérification du timestamp
+    if (!is_numeric($time) || $time > 2147483647 || $time < 0) {
+        return 'Invalid date';
+    }
+
+    $date = new DateTime();
+
+    if (method_exists($date, 'setTimestamp')) {
+        // PHP > 5.3
+        $date->setTimestamp((int)$time);
+    } else {
+        // PHP < 5.3
+        $tempDate = getdate((int)$time);
+        $date->setDate($tempDate['year'], $tempDate['mon'], $tempDate['mday']);
+        $date->setTime($tempDate['hours'], $tempDate['minutes'], $tempDate['seconds']);
+    }
+
+    $time -= $date->getOffset();
+
+    try {
+        $date->setTimezone(new DateTimeZone($toTimeZone));
+    } catch (Exception $e) {
+        // Tu peux logguer l'erreur ici si besoin
+    }
+
+    $time += $date->getOffset();
+}
+
+$format = locale_date_format($format, $time, $LNG);
+return date($format, (int)$time);
 }
 
 function ValidateAddress($address) {
