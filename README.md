@@ -32,7 +32,7 @@ Ce dépôt contient un script shell nommé `gg.sh` conçu pour automatiser l’i
 
 | Dépôt GitHub | Compatibilité | Notes |
 |--------------|---------------|-------|
-| [Dr-Jekill/2Moons-2.0-php8](https://github.com/Dr-Jekill/2Moons-2.0-php8) | ✅ PHP 8.1 | Nécessite patch sur `x.php` |
+| [Dr-Jekill/2Moons-2.0-php8](https://github.com/Dr-Jekill/2Moons-2.0-php8) PHP8.2+ | ✅ PHP 8.1 | Nécessite patch sur `x.php` |
 | [yamelrh/2moons](https://github.com/yamelrh/2moons/tree/php-8.1) | ✅ PHP 8.1 | Stable, simple |
 | [magic-space/space-tactics-php8](https://github.com/magic-space/space-tactics-php8) | ✅ PHP 8.1+ | Symfony, Twig, moderne |
 
